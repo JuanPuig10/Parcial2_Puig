@@ -1,0 +1,28 @@
+<div class="app-animes-detail-container" *ngIf="selected">
+  <app-animes-detail  [animeDetail]="selectedAnime"> </app-animes-detail>
+ </div>
+
+ <hr />
+
+ <div class="container my-4">
+  <img src="https://raw.githubusercontent.com/VivianGomez/ImagenesParcialDSE/main/anime%20Logo.png" class="img-fluid mx-auto d-block mb-4" alt="Anime Logo" style="height: 10%;">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-4" *ngFor="let anime of animes">
+      <div class="card h-100">
+        <img class="card-img-top" [src]="anime.img" [alt]="anime.name">
+        <div class="card-body">
+          <h5 class="card-title">{{ anime.name }}</h5>
+          <p class="card-text">Rating: {{ anime.Rating }}</p>
+          <p class="card-text">Category: {{ anime.categorie }}</p>
+          <td style="background-color: lightblue; color: darkblue;">
+            <button (click)="onSelected(anime)" style="background-color: lightblue; color: darkblue; border: none; cursor: pointer;">
+              Más información
+            </button>
+            <dd class="link-like" style="color: blue;"></dd>
+          </td>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
